@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import logo from './image/285654_cat_icon.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [catImgUrl, setCatImgUrl] = useState('');
@@ -16,14 +17,19 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        {catImgUrl === '' ? (
-          <img src={logo} alt="logo" />
-        ) : (
-          <img className="imgCat" src={`${catImgUrl}`} alt="cat" />
-        )}
+      <div className="container">
+        <h1 className='title'>Cats Pics Generator</h1>
+        <div className="container-img">
+          {catImgUrl === '' ? (
+            <img src={logo} alt="logo" />
+          ) : (
+            <img className="imgCat" src={`${catImgUrl}`} alt="cat" />
+          )}
+        </div>
 
-        <button onClick={fetchPics}>Generate</button>
+        <button className="btn btn-primary btn-lg" onClick={fetchPics}>
+          Generate
+        </button>
       </div>
     </div>
   );

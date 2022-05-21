@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1 className='title'>Cats Pics Generator</h1>
+        <h1 className='title'>Cat Pics Generator</h1>
         <div className="container-img">
           {catImgUrl === '' ? (
             <img src={logo} alt="logo" />

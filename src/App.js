@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import logo from './image/285654_cat_icon.png';
 
 function App() {
+  const [catImgUrl, setCatImgUrl] = useState('');
+
+  function fetchPics() {
+    fetch('https://api.thecatapi.com/v1/images/search')
+      .then((response) => response.json())
+      .then((data) => {
+        setCatImgUrl(data[0].url);
+      })
+      .catch((error) => console.log(error));
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        {catImgUrl === '' ? (
+          <img src={logo} alt="logo" />
+        ) : (
+          <img className="imgCat" src={`${catImgUrl}`} alt="cat" />
+        )}
+
+        <button onClick={fetchPics}>Generate</button>
+      </div>
     </div>
   );
 }

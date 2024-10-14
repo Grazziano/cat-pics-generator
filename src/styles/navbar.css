@@ -1,0 +1,62 @@
+.navbar-custom {
+  background-color: #1a202c; /* Cor de fundo escura */
+  color: #f7fafc; /* Cor do texto */
+  padding: 15px 10px; /* Espaçamento interno */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%;
+}
+
+.navbar-brand {
+  color: #ff6f61; /* Cor do nome do site */
+  font-family: 'Poppins', sans-serif; /* Fonte personalizada */
+  font-size: 24px; /* Tamanho do texto da marca */
+  /* font-weight: bold; */
+  transition: color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.container .navbar-brand {
+  font-family: cattiefont, sans-serif;
+  font-size: 30px;
+  color: #ff6f61;
+  /* margin-bottom: 20px; */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.container .navbar-brand {
+  transform: scale(1.05);
+}
+
+.navbar-brand:hover {
+  color: #ff3b2f; /* Muda a cor ao passar o mouse */
+}
+
+.navbar-nav .nav-link {
+  color: #f7fafc; /* Cor do link */
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 20px; /* Espaçamento entre os links */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff6f61; /* Cor ao passar o mouse */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%2889, 89, 89, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 10px 0; /* Espaçamento para links em telas pequenas */
+  }
+}

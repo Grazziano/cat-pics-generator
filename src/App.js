@@ -1,36 +1,47 @@
 import { useState } from 'react';
-import './App.css';
+import Footer from './components/Footer';
 import logo from './image/285654_cat_icon.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
   const [catImgUrl, setCatImgUrl] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  function fetchPics() {
-    fetch('https://api.thecatapi.com/v1/images/search')
-      .then((response) => response.json())
-      .then((data) => {
-        setCatImgUrl(data[0].url);
-      })
-      .catch((error) => console.log(error));
-  }
+  const fetchPics = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(
+        'https://api.thecatapi.com/v1/images/search'
+      );
+      const data = await response.json();
+      setCatImgUrl(data[0].url);
+    } catch (error) {
+      console.error('Error fetching cat image:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="App">
+      <Navbar />
       <div className="container">
-        <h1 className='title'>Cat Pics Generator</h1>
         <div className="container-img">
-          {catImgUrl === '' ? (
+          {loading ? (
+            <div className="loading-spinner"></div>
+          ) : catImgUrl === '' ? (
             <img src={logo} alt="logo" />
           ) : (
-            <img className="imgCat" src={`${catImgUrl}`} alt="cat" />
+            <img className="imgCat" src={catImgUrl} alt="cat" />
           )}
         </div>
-
-        <button className="btn btn-primary btn-lg" onClick={fetchPics}>
+        <button className="btn btn-custom" onClick={fetchPics}>
           Generate
         </button>
       </div>
+      <Footer />
     </div>
   );
 }

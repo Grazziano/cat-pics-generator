@@ -1,0 +1,49 @@
+.footer {
+  background-color: #1a202c; /* Cor de fundo escura e elegante */
+  color: #f7fafc; /* Cor do texto para contraste */
+  padding: 10px 5px; /* Reduzi o padding para diminuir o tamanho do footer */
+  text-align: center;
+  width: 100%;
+  font-size: 14px; /* Diminuí o tamanho da fonte para ficar mais compacto */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* Alinhei os itens verticalmente */
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.footer p {
+  margin: 5px 0; /* Reduzi o espaçamento em torno do texto */
+}
+
+.footer a {
+  color: #63b3ed;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #90cdf4;
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px; /* Diminuí o espaçamento entre o texto e os ícones sociais */
+}
+
+.footer .social-icons a {
+  color: #63b3ed;
+  margin: 0 8px; /* Menor espaçamento entre ícones */
+  font-size: 18px; /* Tamanho ajustado dos ícones */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.15); /* Leve aumento ao passar o mouse */
+  color: #90cdf4;
+}
